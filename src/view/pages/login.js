@@ -28,7 +28,7 @@ export default () => {
           <input type="password" id ="passwordLogin"placeholder="Enter Password" name="password" required>
           <div id="errorMessageLogin"></div>  
       
-          <button><a id="submitLogin" class="registerSubmit" >Login</a></button>
+          <button id="submitLogin" class="registerSubmit" >Login</button>
       </div>
       <div id="signUpForm" class="modal" style="display: none;">
         <span id="closeModalSignUp" class="close" title="Close Modal">&times;</span>             
@@ -43,7 +43,7 @@ export default () => {
         <div id="errorMessageSignUp"></div> 
         <button id="facebookSignUp">Sign up with Facebook</button>
         <button id="googleSignUp">Sign up with Google</button>
-        <button><a id="signUpSubmit"class="registerSubmit">Sign Up</a></button>
+        <button id="signUpSubmit"class="registerSubmit">Sign Up</button>
     </div>`;
 
 

@@ -65,11 +65,11 @@
     } 
 
     #loginButton {
-        background-color: rgb(14, 13, 95);;
+        background-color: rgb(14, 13, 95);
         font-family: 'Nunito', sans-serif;
         font-size: medium;
         color: rgb(255, 255, 255);
-        padding: 14px 20px;
+        padding: 13px 20px;
         margin: 8px 0;
         border: none;
         cursor: pointer;
@@ -82,7 +82,7 @@
       font-family: 'Nunito', sans-serif;
       font-size: medium;
       color: rgb(0, 0, 0);
-      padding: 14px 20px;
+      padding: 13px 20px;
       margin: 0px auto;
       border: none;
       cursor: pointer;
@@ -172,17 +172,54 @@
     }
 
     button {
-      background-color: rgb(23, 22, 126);
-      font-family: 'Nunito', sans-serif;
-      font-weight: bold; 
-      color: white;
-      padding: 10px 10px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      border-radius: 10px; 
+    background-color: rgb(14, 13, 95);
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    color: rgb(255, 255, 255);
+    padding: 13px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 24px;
+   }
 
+   button:hover {
+    background-color: rgb(32, 30, 160);
+  } 
+
+    #facebookSignUp {
+    background-color: rgb(17, 14, 207);
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    color: rgb(255, 255, 255);
+    padding: 13px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 24px;
+    }
+
+    #facebookSignUp:hover {
+      background-color: rgb(49, 46, 212);
+    } 
+
+    #googleSignUp{
+    background-color: rgb(187, 18, 18);
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    color: rgb(255, 255, 255);
+    padding: 13px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 24px;
+    }
+
+    #googleSignUp:hover {
+      background-color: rgb(156, 21, 21);
     }
 
     @media screen and (max-width: 300px){
