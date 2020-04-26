@@ -1,0 +1,198 @@
+.imagesContainer {
+  width: 101%;
+  max-width: 1920px;
+  margin: auto;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+@media (max-width: 1200px) {
+  .imagesContainer {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+@media (max-width: 992px) {
+  .imagesContainer {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+@media (max-width: 768px) {
+  .imagesContainer {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+@media (max-width: 540px) {
+  .imagesContainer {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+  body{
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    overflow-y: hidden;
+    padding-right: 15px;
+    position: fixed;
+    }
+    
+    /* Modal Login  */
+    
+   input[type=text], input[type=password], input[type=email]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 10px; 
+    } 
+
+    #loginButton {
+        background-color: rgb(14, 13, 95);;
+        font-family: 'Nunito', sans-serif;
+        font-size: medium;
+        color: rgb(255, 255, 255);
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 24px;
+    }
+
+    #signUpButton {
+      background-color: #EFEFEF;
+      font-family: 'Nunito', sans-serif;
+      font-size: medium;
+      color: rgb(0, 0, 0);
+      padding: 14px 20px;
+      margin: 0px auto;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 24px;
+  }
+    
+  #loginButton:hover {
+    background-color: rgb(32, 30, 160);
+  } 
+  
+  #signUpButton:hover {
+    background-color:  rgb(199, 198, 198); 
+} 
+    
+    
+    #closeModalSignUp,
+    #closeModalLogin{
+        display: block;
+        text-align: right;
+        margin: 0px 0 10px 0;
+        position: relative;
+    } 
+    
+    
+    #registerContainer{
+        display: block; 
+        position: fixed;
+        z-index: 2;
+        left: 28%;
+        top: 15%;
+        width: 40%;
+        padding: 30px;
+        background-color: #fefefee3;
+        margin: 5% auto 15% auto;
+        border-radius: 10px;        
+    } 
+    .modal{
+      display: block; 
+      z-index: 2;
+      left: 28%;
+      top: 10%;
+      height: 60%;
+      padding: 16px;
+      overflow: auto;
+      margin: 5% auto 15% auto; 
+      border-radius: 24px;        
+  } 
+    h1{
+      font-family: 'Nunito', sans-serif;
+      text-align: center;
+      color: rgb(23, 22, 126);
+    }
+
+     h2{
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        color: rgb(0, 0, 0);
+      }
+
+      #parrafo {
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        color: rgb(0, 0, 0);
+      }
+    
+    span.password{
+        float: right;
+        padding-top: 16px;  
+    } 
+    
+     
+    .close {
+        position: absolute;
+        right: 5px;
+        top: -10px;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold; 
+    } 
+    
+    
+    .close:hover,
+    .close:focus {
+        color: blue;
+        cursor: pointer;
+    }
+
+    button {
+      background-color: rgb(23, 22, 126);
+      font-family: 'Nunito', sans-serif;
+      font-weight: bold; 
+      color: white;
+      padding: 10px 10px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 10px; 
+
+    }
+
+    @media screen and (max-width: 300px){
+      span.password{
+          display: block;
+          float: none;
+      }
+  
+  }
+
+
+
+
