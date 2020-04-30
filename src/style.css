@@ -1,11 +1,12 @@
 .imagesContainer {
-  width: 101%;
-  max-width: 1920px;
-  margin: auto;
-  text-align: center;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, auto);
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  margin: 5px;
+  overflow-y: hidden;
 }
 
 @media (max-width: 1200px) {
@@ -44,50 +45,47 @@
   }
 }
 
-  body{
+
+  body {
     font-family: 'Nunito', sans-serif;
-    height: 100vh;
-    overflow-y: hidden;
-    padding-right: 15px;
-    position: fixed;
-    }
+  }
     
     /* Modal Login  */
     
    input[type=text], input[type=password], input[type=email]{
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
+        border-color: #ddd;
+        border-style: solid;
         box-sizing: border-box;
-        border-radius: 10px; 
+        border-radius: 10px;
+        width: 100%;
+        padding: 7px;
+        margin: 10px 0;
     } 
 
-    #loginButton {
-        background-color: rgb(14, 13, 95);
-        font-family: 'Nunito', sans-serif;
-        font-size: medium;
-        color: rgb(255, 255, 255);
-        padding: 13px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        border-radius: 24px;
-    }
-
-    #signUpButton {
-      background-color: #EFEFEF;
+   #loginButton {
+      background-color: rgb(14, 13, 95);
       font-family: 'Nunito', sans-serif;
       font-size: medium;
-      color: rgb(0, 0, 0);
-      padding: 13px 20px;
-      margin: 0px auto;
+      color: rgb(255, 255, 255);
+      padding: 12px 20px;
+      margin: 6px 0;
       border: none;
       cursor: pointer;
       width: 100%;
       border-radius: 24px;
+    }
+
+   #signUpButton {
+    background-color: #EFEFEF;
+    font-family: 'Nunito', sans-serif;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    margin: 6px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 24px;
   }
     
   #loginButton:hover {
@@ -103,67 +101,53 @@
     #closeModalLogin{
         display: block;
         text-align: right;
-        margin: 0px 0 10px 0;
+        margin: 0px 0 5px 0;
         position: relative;
-    } 
-    
-    
-    #registerContainer{
-        display: block; 
-        position: fixed;
-        z-index: 2;
-        left: 28%;
-        top: 15%;
-        width: 40%;
-        padding: 30px;
-        background-color: #fefefee3;
-        margin: 5% auto 15% auto;
-        border-radius: 10px;        
-    } 
-    .modal{
-      display: block; 
-      z-index: 2;
-      left: 28%;
-      top: 10%;
-      height: 60%;
-      padding: 16px;
-      overflow: auto;
-      margin: 5% auto 15% auto; 
-      border-radius: 24px;        
-  } 
-    h1{
-      font-family: 'Nunito', sans-serif;
-      text-align: center;
-      color: rgb(23, 22, 126);
     }
 
-     h2{
+    #logotipo{
+      text-align: center;
+      margin: auto;
+    }
+
+    .registerContainer {
+      display: block;
+      position: absolute;
+      padding: 50px;
+      width: 35%;
+      background-color: #fefefee3;
+      border-radius: 24px;   
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      min-width: 300px;
+    }
+
+     h1{
         font-family: 'Nunito', sans-serif;
         text-align: center;
         color: rgb(0, 0, 0);
       }
 
-      #parrafo {
-        font-family: 'Nunito', sans-serif;
-        text-align: center;
-        color: rgb(0, 0, 0);
-      }
+      .parrafo {
+      font-family: 'Nunito', sans-serif;
+      text-align: center;
+      color: rgb(0, 0, 0);
+    }
     
-    span.password{
+    /* span.password{
         float: right;
         padding-top: 16px;  
-    } 
+    }  */
     
      
     .close {
         position: absolute;
-        right: 5px;
-        top: -10px;
         color: #000;
-        font-size: 35px;
+        font-size: 30px;
         font-weight: bold; 
     } 
-    
     
     .close:hover,
     .close:focus {
@@ -171,34 +155,37 @@
         cursor: pointer;
     }
 
-    button {
+    #submitLogin, #signUpSubmit {
     background-color: rgb(14, 13, 95);
     font-family: 'Nunito', sans-serif;
     font-size: medium;
     color: rgb(255, 255, 255);
-    padding: 13px 20px;
-    margin: 8px 0;
+    padding: 12px 20px;
+    margin: 6px 0;
     border: none;
     cursor: pointer;
     width: 100%;
     border-radius: 24px;
+    
    }
 
-   button:hover {
+   #submitLogin:hover {
     background-color: rgb(32, 30, 160);
-  } 
+  }  
 
     #facebookSignUp {
-    background-color: rgb(17, 14, 207);
-    font-family: 'Nunito', sans-serif;
-    font-size: medium;
-    color: rgb(255, 255, 255);
-    padding: 13px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 24px;
+      display: inline-block;
+      background-color: rgb(17, 14, 207);
+      font-family: 'Nunito', sans-serif;
+      font-size: medium;
+      color: rgb(255, 255, 255);
+      padding: 12px 20px;
+      margin: 6px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 24px;
+      font-weight: bold;
     }
 
     #facebookSignUp:hover {
@@ -206,20 +193,22 @@
     } 
 
     #googleSignUp{
-    background-color: rgb(187, 18, 18);
-    font-family: 'Nunito', sans-serif;
-    font-size: medium;
-    color: rgb(255, 255, 255);
-    padding: 13px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 24px;
+      display: inline-block;
+      background-color: rgb(209, 25, 25);
+      font-family: 'Nunito', sans-serif;
+      font-size: medium;
+      color: rgb(255, 255, 255);
+      padding: 12px 20px;
+      margin: 6px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 24px;
+      font-weight: bold;
     }
 
     #googleSignUp:hover {
-      background-color: rgb(156, 21, 21);
+      background-color:  rgb(221, 61, 61); 
     }
 
     @media screen and (max-width: 300px){

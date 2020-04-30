@@ -11,15 +11,18 @@ export default () => {
   <div><img src="/images/6.jpg" width="90%"/><img src="/images/12.jpg" width="90%"/><img src="/images/18.jpg" width="90%"></div>    
 </div>  
 
-    <div id="registerContainer">
+    <div class="registerContainer">
+    
       <div id="divButtons">
-      <h2>Bienvenido a Red Social</h2>
-      <p id="parrafo">Encuentra nuevas ideas para probar</p><br>
-        <button id="loginButton" class="introButtons">Iniciar Sesión</button>
-        <button id="signUpButton" class="introButtons">Registrarse</button>
+      <div id="logotipo"><img src="/images/logo-negro.png" width="30%"></div>
+      
+      <p class="parrafo">Encuentra nuevas ideas para probar</p><br>
+        <button id="loginButton" class="introButtons">Login</button>
+        <button id="signUpButton" class="introButtons">Sign Up</button>
       </div>
       <div id="loginForm" class="modal" style="display: none;">
-          <span id="closeModalLogin" class="close" title="Close Modal">&times;</span>              
+          <span id="closeModalLogin" class="close" title="Close Modal">&times;</span>  
+          <div id="logotipo"><img src="/images/logo-negro.png" width="30%"></div>
                  
           <label for="email" class="loginLabels">Email</label>
           <input type="email" id="emailLogin" placeholder="Enter Email" name="email" required>
@@ -28,22 +31,27 @@ export default () => {
           <input type="password" id ="passwordLogin"placeholder="Enter Password" name="password" required>
           <div id="errorMessageLogin"></div>  
       
-          <button id="submitLogin" class="registerSubmit" >Login</button>
+          <button id="submitLogin" class="registerSubmit">Login</button>
+          <p class="parrafo">Forgot your password?</p>  
       </div>
       <div id="signUpForm" class="modal" style="display: none;">
-        <span id="closeModalSignUp" class="close" title="Close Modal">&times;</span>             
-        <label for="username" class="loginLabels">Username</label>
+        <span id="closeModalSignUp" class="close" title="Close Modal">&times;</span>     
+        <div id="logotipo"><img src="/images/logo-negro.png" width="30%"></div>
+               
+        <label for="username" class="loginLabels">Username*</label>
         <input type="text" placeholder="Enter Username" name="username" required>
       
-        <label for="email" class="loginLabels">Email</label>
+        <label for="email" class="loginLabels">Email*</label>
         <input id="signUpEmail" type="email" placeholder="Enter Email" name="email" required>
       
-        <label for="password" class="loginLabels"> Password</label>
+        <label for="password" class="loginLabels"> Password*</label>
         <input id="signUpPass" type="password" placeholder="Enter Password" name="password" required>
         <div id="errorMessageSignUp"></div> 
+        <button id="signUpSubmit"class="registerSubmit">Sign Up</button>
+        <p class="parrafo">Or</p>
         <button id="facebookSignUp">Sign up with Facebook</button>
         <button id="googleSignUp">Sign up with Google</button>
-        <button id="signUpSubmit"class="registerSubmit">Sign Up</button>
+        
     </div>`;
 
 

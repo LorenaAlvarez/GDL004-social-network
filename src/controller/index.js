@@ -39,7 +39,6 @@ export const controlador = {
 }
 
 export const login = () => { 
-    debugger
     controlador.changeTmp("#/home");
     console.log("entro");
     
