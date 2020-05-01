@@ -48,9 +48,9 @@ export default () => {
         <input id="signUpPass" type="password" placeholder="Enter Password" name="password" required>
         <div id="errorMessageSignUp"></div> 
         <button id="signUpSubmit"class="registerSubmit">Sign Up</button>
-        <p class="parrafo">Or</p>
-        <button id="facebookSignUp">Sign up with Facebook</button>
-        <button id="googleSignUp">Sign up with Google</button>
+        <p class="parrafo">Or sign up with:</p>
+        <button id="facebookSignUp">facebook icon</button>
+        <button id="googleSignUp">Google icon</button>
         
     </div>`;
 
