@@ -1,4 +1,4 @@
-import { login } from '../../controller/index.js';
+import { signUp, login } from '../../controller/index.js';
 
 export default () => {
   const viewHome =
@@ -14,29 +14,32 @@ export default () => {
     <div class="registerContainer">
     
       <div id="divButtons">
-      <div id="logotipo"><img src="/images/logo-negro.png" width="30%"></div>
+      
       
       <p class="parrafo">Encuentra nuevas ideas para probar</p><br>
         <button id="loginButton" class="introButtons">Login</button>
         <button id="signUpButton" class="introButtons">Sign Up</button>
       </div>
+
       <div id="loginForm" class="modal" style="display: none;">
           <span id="closeModalLogin" class="close" title="Close Modal">&times;</span>  
-          <div id="logotipo"><img src="/images/logo-negro.png" width="30%"></div>
+          
                  
           <label for="email" class="loginLabels">Email</label>
           <input type="email" id="emailLogin" placeholder="Enter Email" name="email" required>
       
           <label for="password" class="loginLabels">Password</label>
           <input type="password" id ="passwordLogin"placeholder="Enter Password" name="password" required>
+         
           <div id="errorMessageLogin"></div>  
       
           <button id="submitLogin" class="registerSubmit">Login</button>
           <p class="parrafo">Forgot your password?</p>  
       </div>
+
       <div id="signUpForm" class="modal" style="display: none;">
         <span id="closeModalSignUp" class="close" title="Close Modal">&times;</span>     
-        <div id="logotipo"><img src="/images/logo-negro.png" width="30%"></div>
+        
                
         <label for="username" class="loginLabels">Username*</label>
         <input type="text" placeholder="Enter Username" name="username" required>
@@ -46,12 +49,15 @@ export default () => {
       
         <label for="password" class="loginLabels"> Password*</label>
         <input id="signUpPass" type="password" placeholder="Enter Password" name="password" required>
-        <div id="errorMessageSignUp"></div> 
-        <button id="signUpSubmit"class="registerSubmit">Sign Up</button>
-        <p class="parrafo">Or sign up with:</p>
-        <button id="facebookSignUp">facebook icon</button>
-        <button id="googleSignUp">Google icon</button>
         
+        <div id="errorMessageSignUp"></div> 
+        <h1 id="login"></h1>
+
+        <button id="signUpSubmit"class="registerSubmit">Sign Up</button>
+
+        <p class="parrafo">Or sign up with:</p>
+        <button id="facebookSignUp"><span class="fab fa-facebook-f"></span>facebook</button>
+        <button id="googleSignUp"><span class="fab fa-google"></span>Google</button>
     </div>`;
 
 
@@ -98,19 +104,19 @@ export default () => {
       divButtons.style.display = 'none';
     }); 
     
+    
+    
+    const submitSignUp = divElemt.querySelector("#signUpSubmit");
+    submitSignUp.addEventListener("click", signUp);
+    
     const submitLogin = divElemt.querySelector('#submitLogin');
-    console.log(login)
     submitLogin.addEventListener('click', login);
 
-  /* const submitSignUp = divElemt.querySelector("#signUpSubmit");
-  submitSignUp.addEventListener("click", signUp);
+    /*const facebookSignUp = divElemt.querySelector("#facebookSignUp");
+    facebookSignUp.addEventListener("click", signUpFacebook);
 
+    const googleSignUp = divElemt.querySelector("#googleSignUp");
+    googleSignUp.addEventListener("click", signUpGoogle);  */
 
-  const facebookSignUp = divElemt.querySelector("#facebookSignUp");
-  facebookSignUp.addEventListener("click", signUpFacebook);
-
-  const googleSignUp = divElemt.querySelector("#googleSignUp");
-  googleSignUp.addEventListener("click", signUpGoogle); */
-
-  return divElemt;
+    return divElemt;
 }; 

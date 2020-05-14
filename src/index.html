@@ -4,12 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
   <link rel="stylesheet" href="home.css" />
+  <script src="https://kit.fontawesome.com/f6698417b4.js" crossorigin="anonymous"></script>
   <title>Red social</title>
 </head>
+
 <body>
   <section id="container"></section>
   <script type="module" src="main.js"></script>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBAp8kXf-g1xlSmmg4YmQgj9t4fonVKqA4",
+    authDomain: "social-network-27b72.firebaseapp.com",
+    databaseURL: "https://social-network-27b72.firebaseio.com",
+    projectId: "social-network-27b72",
+    storageBucket: "social-network-27b72.appspot.com",
+    messagingSenderId: "562253055472",
+    appId: "1:562253055472:web:ddd01a79f1d11e2fa3c935",
+    measurementId: "G-R9NS15EWY3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
 </body>
 </html>

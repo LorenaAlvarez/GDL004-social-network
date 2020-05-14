@@ -1,12 +1,12 @@
-import Login from './pages/login.js';
-import Home from './pages/home.js';
-import Different from './pages/page404.js';
+import login from './pages/login.js';
+import home from './pages/home.js';
+import different from './pages/page404.js';
 import { controlador } from '../controller/index.js'
 
 const components = {
-  login: Login,
-  home: Home,
-  different: Different
+  login: login,
+  home: home,
+  different: different
 }
 
 const vista = {
@@ -28,11 +28,10 @@ const vista = {
     });
   },
 
-  representarMarcadores: ( ) => {
+  representarMarcadores: () => {
     let listaMarcadores = document.getElementById('lista-marcadores');
     listaMarcadores.innerHTML = ''
     console.log(controlador.obtenerMarcadores());
-    // controlador.obtenerMarcadores()  
     controlador.obtenerMarcadores().forEach(marcador => {
       listaMarcadores.innerHTML += `
       <div class="well" id="marcador-${marcador.id}">
@@ -45,5 +44,5 @@ const vista = {
   }
 }
 
-export { components, vista}; 
+export { components, vista};
 

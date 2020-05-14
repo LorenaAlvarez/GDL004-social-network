@@ -4,23 +4,19 @@
     color: #f1f1f1;
   }
   
-/* .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-}
-  
-.sticky + .content {
-    padding-top: 102px;
-} */
   
 .homeContainer{
     width: 95%;
     max-width: 1920px;
     margin: 15px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
     font-size: 50px;
     line-height: 50px;
     text-align: center;
+    
 }
 
 .homeContainer > div {
@@ -30,34 +26,67 @@
     text-align: center;
 }
 
-.homeContainer {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "profile post post post"
-                         "profile post post post"
-                         "profile wall wall wall"
-                         "profile wall wall wall";
-    
-}
+
+
 .homeContainer .profile {
     background: rgb(176, 207, 233);
-    grid-column: profile;
-    grid-row: profile;
-    border-radius: 24px;
+    grid-column: 1;
+    grid-row: span 2;
 }
 
 .homeContainer .post {
-    background: rgb(176, 207, 233);
-    grid-column: post;
-    grid-row: post;
-    border-radius: 24px;
+    background: rgb(43, 99, 145);
+    grid-column: span 3;
 }
 
 .homeContainer .wall {
     background: rgb(176, 207, 233);
-    grid-column: wall;
-    grid-row: wall;
-    border-radius: 24px;
+    grid-column-start: 2;
+    grid-column-end: -1;
 }
 
+@media screen and (max-width: 768px) {
+    .homeContainer .post {
+        grid-column: 1 / -1;
+    }
+
+    .homeContainer .wall {
+        grid-column: 1 / -1;
+    }
+
+    .homeContainer .profile {
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .homeContainer .post {
+        grid-column: 1 / -1;
+    }
+
+    .homeContainer .wall {
+        grid-column: 1 / -1;
+    }
+
+    .homeContainer .profile {
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .homeContainer .post {
+        grid-column: 1 / -1;
+    }
+
+    .homeContainer .wall {
+        grid-column: 1 / -1;
+    }
+
+    .homeContainer .profile {
+        grid-column: 1 / -1;
+    }
+
+    .header {
+        display: none;
+    }
+}

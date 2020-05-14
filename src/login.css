@@ -15,7 +15,6 @@
     display: grid;
     grid-gap: 8px;
     grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(3, auto); */
   }
 }
 
@@ -24,7 +23,6 @@
     display: grid;
     grid-gap: 8px;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-rows: repeat(3, auto); */
   }
 }
 
@@ -33,7 +31,6 @@
     display: grid;
     grid-gap: 6px;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(3, auto); */
   }
 }
 
@@ -42,7 +39,6 @@
     display: grid;
     grid-gap: 4px;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-template-rows: repeat(3, auto); */
   }
 }
 
@@ -220,6 +216,15 @@
   
   }
 
+  .fa-facebook-f {
+    margin-right: 10px;
+    background-color: blue;
+  }
 
+  .fa-google {
+    margin-right: 10px;
+  }
 
-
+  #errorMessageLogin {
+    color: red;
+  }

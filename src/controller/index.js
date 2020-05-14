@@ -1,4 +1,5 @@
 import { modelo } from '../model/index.js'
+import { firebaseAuth } from '../model/firebase-auth.js';
 import { components, vista} from '../view/index.js';
 
 export const controlador = {
@@ -11,12 +12,11 @@ export const controlador = {
     vista.representarMarcadores(); 
   }, 
 
-  obtenerMarcadores:() => {
+  obtenerMarcadores: () => {
     return modelo.obtenerMarcadores();
   },
 
   changeTmp: (hash) => {
-    // const id = hash.split('/')[1];
     const sectionMain = document.getElementById('container');
     sectionMain.innerHTML = '';
 
@@ -28,9 +28,6 @@ export const controlador = {
         case '#/home':
             sectionMain.appendChild(components.home())
             controlador.init()
-        // case '#/accesorios':
-        // case '#/lugares':
-            // { return sectionMain.appendChild(components[id]()); }
             break;
         default:
             return sectionMain.appendChild(components.different())
@@ -38,8 +35,31 @@ export const controlador = {
   }
 }
 
-export const login = () => { 
-    controlador.changeTmp("#/home");
-    console.log("entro");
-    
+export const signUp = () => {    
+  let email = document.getElementById("signUpEmail").value;
+  let pass = document.getElementById("signUpPass").value;
+  //alert("Email= "+email+"password"+pass);
+  firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+    const errorMessageSignUp = document.getElementById("errorMessageSignUp");
+    let errorMessage = error.message;
+    errorMessageSignUp.innerHTML = errorMessage;
+    /* let errorCode = error.code;
+    let errorMessage = error.message;
+    alert(errorMessage) */
+  });
 }
+
+  export const login = () => {    
+    let inputEmail = document.getElementById("emailLogin").value;      
+    let inputPass = document.getElementById("passwordLogin").value;
+    firebase.auth().signInWithEmailAndPassword(inputEmail, inputPass).then(function(user) {
+      controlador.changeTmp("#/home");
+    })
+    .catch(function(error) {
+      const errorMessageLogin = document.getElementById("errorMessageLogin");
+      errorMessageLogin.innerHTML = "Invalid email or password";
+      /* let errorCode = error.code;
+      let errorMessage = error.message;
+      alert(errorMessage) */
+    });
+    }
