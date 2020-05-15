@@ -1,7 +1,10 @@
+import { signOut } from "../../controller/index.js";
+
 export default () => {
   const viewHome = `
   <div class="header" id="myHeader">
-      <h2>My Header</h2>
+      <h2>My Header</h2> 
+      <span class="fas fa-sign-out-alt"></span> <button id="signOutButton">Sign Out</button> 
     </div>
 
   <div class="homeContainer">
@@ -38,6 +41,14 @@ export default () => {
 
   
   const divElemt = document.createElement('div');
+  divElemt.classList.add('divElemt')
   divElemt.innerHTML = viewHome;
+
+  const submitSignOut = divElemt.querySelector("#signOutButton");
+  submitSignOut.addEventListener("click", signOut);
+
+
+
+
   return divElemt;
 };

@@ -1,12 +1,12 @@
 import login from './pages/login.js';
 import home from './pages/home.js';
-import different from './pages/page404.js';
+import notFound from './pages/page404.js';
 import { controlador } from '../controller/index.js'
 
 const components = {
   login: login,
   home: home,
-  different: different
+  notFound: notFound
 }
 
 const vista = {

@@ -1,6 +1,27 @@
-import { signUp, login } from '../../controller/index.js';
+import { signUp, login, signUpFacebook, signUpGoogle, controlador } from '../../controller/index.js';
+
+
 
 export default () => {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
+      controlador.changeTmp("#/home");
+      console.log(user)
+      return;
+      
+    } else {
+     // alert('Sin cuenta, Por Favor Registrate')
+    }
+  });
+
+  
   const viewHome =
 `<div class="imagesContainer">  
   <div><img src="/images/1.jpg" width="90%"/><img src="/images/7.jpg" width="90%"/><img src="/images/13.jpg" width="90%"></div>
@@ -112,11 +133,13 @@ export default () => {
     const submitLogin = divElemt.querySelector('#submitLogin');
     submitLogin.addEventListener('click', login);
 
-    /*const facebookSignUp = divElemt.querySelector("#facebookSignUp");
+    const facebookSignUp = divElemt.querySelector("#facebookSignUp");
     facebookSignUp.addEventListener("click", signUpFacebook);
 
     const googleSignUp = divElemt.querySelector("#googleSignUp");
-    googleSignUp.addEventListener("click", signUpGoogle);  */
+    googleSignUp.addEventListener("click", signUpGoogle);
+
+   
 
     return divElemt;
 }; 

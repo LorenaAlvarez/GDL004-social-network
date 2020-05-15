@@ -1,5 +1,4 @@
 import { modelo } from '../model/index.js'
-import { firebaseAuth } from '../model/firebase-auth.js';
 import { components, vista} from '../view/index.js';
 
 export const controlador = {
@@ -30,7 +29,7 @@ export const controlador = {
             controlador.init()
             break;
         default:
-            return sectionMain.appendChild(components.different())
+            return sectionMain.appendChild(components.notFound())
     }
   }
 }
@@ -38,18 +37,15 @@ export const controlador = {
 export const signUp = () => {    
   let email = document.getElementById("signUpEmail").value;
   let pass = document.getElementById("signUpPass").value;
-  //alert("Email= "+email+"password"+pass);
   firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
     const errorMessageSignUp = document.getElementById("errorMessageSignUp");
     let errorMessage = error.message;
     errorMessageSignUp.innerHTML = errorMessage;
-    /* let errorCode = error.code;
-    let errorMessage = error.message;
-    alert(errorMessage) */
+    
   });
 }
 
-  export const login = () => {    
+  export const login = () => {  
     let inputEmail = document.getElementById("emailLogin").value;      
     let inputPass = document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(inputEmail, inputPass).then(function(user) {
@@ -58,8 +54,25 @@ export const signUp = () => {
     .catch(function(error) {
       const errorMessageLogin = document.getElementById("errorMessageLogin");
       errorMessageLogin.innerHTML = "Invalid email or password";
-      /* let errorCode = error.code;
-      let errorMessage = error.message;
-      alert(errorMessage) */
     });
     }
+
+    export const signOut = () => { 
+      firebase.auth().signOut().then(function(){
+        controlador.changeTmp("#");
+      })
+      .catch(function(error){
+        alert(error);
+      })
+    }
+
+    
+export const signUpGoogle = () => {
+  const providerGoogle = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(providerGoogle);
+}
+export const signUpFacebook = () => {
+  const providerFacebook = new firebase.auth.FacebookAuthProvider();
+  firebase.auth().signInWithPopup(providerFacebook);
+}
+
