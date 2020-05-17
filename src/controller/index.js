@@ -49,7 +49,8 @@ export const signUp = () => {
     let inputEmail = document.getElementById("emailLogin").value;      
     let inputPass = document.getElementById("passwordLogin").value;
     firebase.auth().signInWithEmailAndPassword(inputEmail, inputPass).then(function(user) {
-      controlador.changeTmp("#/home");
+      location.hash = '#/home';
+      //controlador.changeTmp("#/home");
     })
     .catch(function(error) {
       const errorMessageLogin = document.getElementById("errorMessageLogin");
@@ -59,7 +60,8 @@ export const signUp = () => {
 
     export const signOut = () => { 
       firebase.auth().signOut().then(function(){
-        controlador.changeTmp("#");
+        location.hash = '#/';
+        //controlador.changeTmp("#");
       })
       .catch(function(error){
         alert(error);

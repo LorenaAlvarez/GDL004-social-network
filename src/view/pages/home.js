@@ -3,8 +3,8 @@ import { signOut } from "../../controller/index.js";
 export default () => {
   const viewHome = `
   <div class="header" id="myHeader">
-      <h2>My Header</h2> 
-      <span class="fas fa-sign-out-alt"></span> <button id="signOutButton">Sign Out</button> 
+      <h2>Social Network</h2> 
+      <span id="signOutButton" class="fas fa-sign-out-alt"> Log Out</span> 
     </div>
 
   <div class="homeContainer">
@@ -15,23 +15,15 @@ export default () => {
         
     <div class="post">
       <form id="form-marcadores">
-    <div>
-      <label for="nombre-input">Nombre</label>
-      <input name="nombre" type="text" id="nombre-input"/>
-    </div>
-      
+        
     <div>
       <label for="descripcion-input">Descripcion</label>
       <input name="descripcion" type="text" id="descripcion-input">
     </div>
 
-    <div>
-      <label for="url-input">URLs</label>
-      <input name="url" type="text" id="url-input">
-    </div>
-      <button type="submit">Añadir</button>
+    <button type="submit">Añadir</button>
     </form>
-  </div>
+    </div>
         
     <div class="wall">
       <div id="lista-marcadores"></div>

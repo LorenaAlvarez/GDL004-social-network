@@ -3,25 +3,6 @@ import { signUp, login, signUpFacebook, signUpGoogle, controlador } from '../../
 
 
 export default () => {
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      let displayName = user.displayName;
-      let email = user.email;
-      let emailVerified = user.emailVerified;
-      let photoURL = user.photoURL;
-      let isAnonymous = user.isAnonymous;
-      let uid = user.uid;
-      let providerData = user.providerData;
-      controlador.changeTmp("#/home");
-      console.log(user)
-      return;
-      
-    } else {
-     // alert('Sin cuenta, Por Favor Registrate')
-    }
-  });
-
-  
   const viewHome =
 `<div class="imagesContainer">  
   <div><img src="/images/1.jpg" width="90%"/><img src="/images/7.jpg" width="90%"/><img src="/images/13.jpg" width="90%"></div>
@@ -55,6 +36,12 @@ export default () => {
           <div id="errorMessageLogin"></div>  
       
           <button id="submitLogin" class="registerSubmit">Login</button>
+
+          <p class="parrafo">Or Login with:</p>
+          
+          <button id="facebookSignUp"><span class="fab fa-facebook-f"></span>facebook</button>
+          <button id="googleSignUp"><span class="fab fa-google"></span>Google</button>
+
           <p class="parrafo">Forgot your password?</p>  
       </div>
 

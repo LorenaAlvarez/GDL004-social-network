@@ -7,22 +7,17 @@
   <link rel="stylesheet" href="login.css" />
   <link rel="stylesheet" href="home.css" />
   <script src="https://kit.fontawesome.com/f6698417b4.js" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
   <title>Red social</title>
 </head>
 
 <body>
   <section id="container"></section>
   <script type="module" src="main.js"></script>
-  
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
-
+ 
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -35,9 +30,19 @@
     appId: "1:562253055472:web:ddd01a79f1d11e2fa3c935",
     measurementId: "G-R9NS15EWY3"
   };
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  const db = firebase.firestore();
+
+
+  db.collection('posts').get().then((snapshot) => {
+  snapshot.docs.forEach(doc => {
+    console.log(doc.data())
+  });
+})
+
 </script>
 
 </body>

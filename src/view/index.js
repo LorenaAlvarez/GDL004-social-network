@@ -18,9 +18,9 @@ const vista = {
       e.preventDefault();      
       const nuevomarcador = {
         id: Date.now(),
-        nombre: form.nombre.value,
+       // nombre: form.nombre.value,
         descripcion: form.descripcion.value,
-        URL: form.url.value
+      // URL: form.url.value
       }
       form.reset();
       controlador.agregarMarcador(nuevomarcador);

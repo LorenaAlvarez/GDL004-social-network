@@ -228,3 +228,7 @@
   #errorMessageLogin {
     color: red;
   }
+
+  #errorMessageSignUp {
+    color: red;
+  }

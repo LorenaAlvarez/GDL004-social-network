@@ -1,12 +1,12 @@
 .header {
-    padding: 10px 16px;
+    padding: 5px 5px;
     background-color: rgb(14, 13, 95);
     color: #f1f1f1;
   }
   
   
 .homeContainer{
-    width: 95%;
+    width: 85%;
     max-width: 1920px;
     margin: 15px auto;
     display: grid;
@@ -89,4 +89,13 @@
     .header {
         display: none;
     }
+}
+
+.fa-sign-out-alt {
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  top: 30px;
+  padding: 10px;
+  cursor: pointer;
 }
