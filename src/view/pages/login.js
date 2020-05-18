@@ -1,4 +1,4 @@
-import { signUp, login, signUpFacebook, signUpGoogle, controlador } from '../../controller/index.js';
+import { signUp, login, signUpFacebook, signUpGoogle, controlador } from '../../controller/controller.js';
 
 
 

@@ -37,12 +37,6 @@
   const db = firebase.firestore();
 
 
-  db.collection('posts').get().then((snapshot) => {
-  snapshot.docs.forEach(doc => {
-    console.log(doc.data())
-  });
-})
-
 </script>
 
 </body>

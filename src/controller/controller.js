@@ -1,18 +1,22 @@
-import { modelo } from '../model/index.js'
-import { components, vista} from '../view/index.js';
+import { modelo } from '../model/model.js'
+import { components, vista} from '../view/view.js';
 
 export const controlador = {
   init: () => {
     vista.init()
   },
 
-  agregarMarcador: (nuevomarcador) => {
-    modelo.agregaMarcador(nuevomarcador) 
-    vista.representarMarcadores(); 
+  addPosts: (newPost) => {
+    modelo.addPosts(newPost) 
+    vista.renderPosts(); 
   }, 
 
-  obtenerMarcadores: () => {
-    return modelo.obtenerMarcadores();
+  getPosts: () => {
+    return new Promise((resolve, reject) => {
+      modelo.getPosts().then(posts => {
+       resolve(posts); 
+     }) 
+    })
   },
 
   changeTmp: (hash) => {
@@ -27,6 +31,7 @@ export const controlador = {
         case '#/home':
             sectionMain.appendChild(components.home())
             controlador.init()
+            vista.renderPosts()
             break;
         default:
             return sectionMain.appendChild(components.notFound())

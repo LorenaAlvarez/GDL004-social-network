@@ -1,4 +1,4 @@
-import { controlador } from './controller/index.js';
+import { controlador } from './controller/controller.js';
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       let uid = user.uid;
       let providerData = user.providerData;
       location.hash = '#/home';
-      console.log(user)
+      //console.log(user)
       return;
     } else {
      // alert('Sin cuenta, Por Favor Registrate')

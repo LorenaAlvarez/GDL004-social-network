@@ -1,4 +1,4 @@
-import { signOut } from "../../controller/index.js";
+import { signOut } from "../../controller/controller.js";
 
 export default () => {
   const viewHome = `
@@ -9,16 +9,15 @@ export default () => {
 
   <div class="homeContainer">
 
-    <div class="profile"><img src="/images/logo.png" width="60%">
-      <h6 id="name">Name</h6>
+    <div class="profile"><img src="/images/logo.png" width="90%">
     </div>
         
     <div class="post">
-      <form id="form-marcadores">
+      <form id="form-posts">
         
     <div>
-      <label for="descripcion-input">Descripcion</label>
-      <input name="descripcion" type="text" id="descripcion-input">
+      <label for="descripcion-input">Description</label>
+      <input name="description" type="text" id="description-input">
     </div>
 
     <button type="submit">Añadir</button>
@@ -26,7 +25,7 @@ export default () => {
     </div>
         
     <div class="wall">
-      <div id="lista-marcadores"></div>
+      <div id="list-posts"></div>
     </div>
   </div>
   `
