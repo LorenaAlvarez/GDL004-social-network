@@ -7,16 +7,12 @@ export const controlador = {
   },
 
   addPosts: (newPost) => {
-    modelo.addPosts(newPost) 
+    modelo.addPosts(newPost);
     vista.renderPosts(); 
   }, 
 
   getPosts: () => {
-    return new Promise((resolve, reject) => {
-      modelo.getPosts().then(posts => {
-       resolve(posts); 
-     }) 
-    })
+    return modelo.getPosts();
   },
 
   changeTmp: (hash) => {

@@ -14,13 +14,12 @@ export default () => {
         
     <div class="post">
       <form id="form-posts">
-        
     <div>
-      <label for="descripcion-input">Description</label>
-      <input name="description" type="text" id="description-input">
+      <label for="text-input">Add Post</label>
+      <input name="text" type="text" id="text-input">
     </div>
 
-    <button type="submit">Añadir</button>
+    <button type="submit">Share</button>
     </form>
     </div>
         

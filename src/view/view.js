@@ -16,10 +16,11 @@ const vista = {
     form.addEventListener('submit', (e) => {
       e.preventDefault();      
       const newPost = {
-        id: Date.now(),
-       // nombre: form.nombre.value,
-       // descripcion: form.descripcion.value,
-      // URL: form.url.value
+        author: 'Lorena',
+        date: '',
+        privacity: 'public',
+        text: form.text.value,
+        userId: 123456
       }
       form.reset();
       controlador.addPosts(newPost);

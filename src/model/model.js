@@ -1,7 +1,7 @@
 export const modelo = {
   posts: [],
   addPosts: (newPost) => {
-  return modelo.posts.push(newPost)
+    db.collection('posts').add(newPost)
   },
   getPosts: () => {
     let collection = [];
