@@ -15,6 +15,11 @@ export const controlador = {
     return modelo.getPosts();
   },
 
+  deletePosts: (id) => {
+    return modelo.deletePosts(id);
+
+  },
+
   changeTmp: (hash) => {
     const sectionMain = document.getElementById('container');
     sectionMain.innerHTML = '';

@@ -8,15 +8,15 @@ export const modelo = {
     return new Promise((resolve, reject) => {
       db.collection('posts').get().then((snapshot) => {
         snapshot.docs.forEach(doc => {
-          collection.push(doc.data())
+          collection.push(doc)
         });
         // console.log(collection)
         resolve(collection); 
       })
     })
   },
-  deletePosts: () => {
-
+  deletePosts: (id) => {
+    db.collection('posts').doc(id).delete();
   },
   editPosts: () => {
 

@@ -36,16 +36,22 @@ const vista = {
       posts.forEach(post => {
         listPosts.innerHTML += `
         <div class="well" id="post-${post.id}">
-          <a target="_blank" href="${post.URL}"><h3>${post.author}</h3></a>
-          <p>${post.text}</p>
-          <button class="btn btn-danger pull-right" id="${post.id}">Eliminar</button>
+          <a target="_blank" href="${post.URL}"><h3>${post.data().author}</h3></a>
+          <p>${post.data().text}</p>
+          <button class="btn-delete-post" id="${post.id}">Eliminar</button>
         </div>
         `;
       });
+      let btnsDelete = document.querySelectorAll('.btn-delete-post');
+      for (let i = 0; i < btnsDelete.length ; i++){
+        btnsDelete[i].addEventListener('click', () => {
+          let btnId = btnsDelete[i].getAttribute('id');
+          controlador.deletePosts(btnId);
+        })
+
+      }
     });
     return;
-
-    
   }
 }
 
