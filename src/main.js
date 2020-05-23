@@ -1,16 +1,19 @@
 import { controlador } from './controller/controller.js';
 
+let displayName = '';
+let uid = '';
+
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      let displayName = user.displayName;
+      displayName = user.email.split('@')[0];
       let email = user.email;
       let emailVerified = user.emailVerified;
       let photoURL = user.photoURL;
       let isAnonymous = user.isAnonymous;
-      let uid = user.uid;
+      uid = user.uid;
       let providerData = user.providerData;
       location.hash = '#/home';
-      //console.log(user)
+      console.log(user)
       return;
     } else {
      // alert('Sin cuenta, Por Favor Registrate')
@@ -25,3 +28,5 @@ const init = ( ) => {
 } 
 
 window.addEventListener('load', init);
+
+export { displayName, uid};

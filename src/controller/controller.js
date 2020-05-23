@@ -62,7 +62,7 @@ export const signUp = () => {
       const errorMessageLogin = document.getElementById("errorMessageLogin");
       errorMessageLogin.innerHTML = "Invalid email or password";
     });
-    }
+}
 
     export const signOut = () => { 
       firebase.auth().signOut().then(function(){
@@ -72,7 +72,7 @@ export const signUp = () => {
       .catch(function(error){
         alert(error);
       })
-    }
+}
 
     
 export const signUpGoogle = () => {

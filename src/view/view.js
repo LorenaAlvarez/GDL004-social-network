@@ -2,6 +2,8 @@ import login from './pages/login.js';
 import home from './pages/home.js';
 import notFound from './pages/page404.js';
 import { controlador } from '../controller/controller.js'
+import { displayName, uid } from '../main.js'
+
 
 const components = {
   login: login,
@@ -16,11 +18,11 @@ const vista = {
     form.addEventListener('submit', (e) => {
       e.preventDefault();      
       const newPost = {
-        author: 'Lorena',
+        author: displayName,
         date: '',
         privacity: 'public',
         text: form.text.value,
-        userId: 123456
+        userId: uid
       }
       form.reset();
       controlador.addPosts(newPost);
@@ -36,7 +38,7 @@ const vista = {
       posts.forEach(post => {
         listPosts.innerHTML += `
         <div class="well" id="post-${post.id}">
-          <a target="_blank" href="${post.URL}"><h3>${post.data().author}</h3></a>
+          <a target="_blank" href="${post.URL}"><h3 class='post-author'>${post.data().author}</h3></a>
           <p>${post.data().text}</p>
           <button class="btn-delete-post" id="${post.id}">Eliminar</button>
         </div>

@@ -99,3 +99,7 @@
   padding: 10px;
   cursor: pointer;
 }
+
+.post-author {
+    text-transform: capitalize;
+}
