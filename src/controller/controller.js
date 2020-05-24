@@ -11,13 +11,12 @@ export const controlador = {
     vista.renderPosts(); 
   }, 
 
-  getPosts: () => {
-    return modelo.getPosts();
+  getPosts: (condition) => {
+    return modelo.getPosts(condition);
   },
 
   deletePosts: (id) => {
     return modelo.deletePosts(id);
-
   },
 
   changeTmp: (hash) => {

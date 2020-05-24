@@ -6,9 +6,18 @@ export const modelo = {
   getPosts: (condition) => {
     let collection = [];
     if (condition) { 
+      console.log(condition);
+      return new Promise((resolve, reject) => {
+        db.collection('posts').where(condition[0], condition[1], condition[2]).orderBy('date', 'desc').get().then((snapshot) => {
+          snapshot.docs.forEach(doc => {
+            collection.push(doc)
+          });
+          resolve(collection); 
+        })
+      })
     } else {
       return new Promise((resolve, reject) => {
-        db.collection('posts').get().then((snapshot) => {
+        db.collection('posts').orderBy('date', 'desc').get().then((snapshot) => {
           snapshot.docs.forEach(doc => {
             collection.push(doc)
           });
@@ -20,13 +29,12 @@ export const modelo = {
   },
 
   deletePosts: (id) => {
-    db.collection('posts').doc(id).delete();
+    return db.collection('posts').doc(id).delete();
   },
 
   editPosts: () => {
 
   } 
-
 }
 
 

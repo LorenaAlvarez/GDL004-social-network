@@ -19,7 +19,7 @@ const vista = {
       e.preventDefault();      
       const newPost = {
         author: displayName,
-        date: '',
+        date: new Date(),
         privacity: 'public',
         text: form.text.value,
         userId: uid
@@ -33,6 +33,7 @@ const vista = {
   renderPosts: () => {
     let listPosts = document.getElementById('list-posts');
     listPosts.innerHTML = ''
+   // controlador.getPosts(['userId', '==', uid]).then(posts => {
     controlador.getPosts().then(posts => {
       console.log(posts)
       posts.forEach(post => {
@@ -48,7 +49,9 @@ const vista = {
       for (let i = 0; i < btnsDelete.length ; i++){
         btnsDelete[i].addEventListener('click', () => {
           let btnId = btnsDelete[i].getAttribute('id');
-          controlador.deletePosts(btnId);
+          controlador.deletePosts(btnId).then((response) => {
+            vista.renderPosts();
+          });
         })
 
       }

@@ -29,4 +29,4 @@ const init = ( ) => {
 
 window.addEventListener('load', init);
 
-export { displayName, uid};
+export { displayName, uid };
