@@ -32,8 +32,10 @@ export const modelo = {
     return db.collection('posts').doc(id).delete();
   },
 
-  editPosts: () => {
-
+  updatePosts: (id, text) => {
+    return db.collection('posts').doc(id).update({
+      text: text,
+    });
   } 
 }
 
