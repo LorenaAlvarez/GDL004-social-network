@@ -23,6 +23,10 @@ export const controlador = {
     return modelo.updatePosts(id, text);
   },
 
+  toggleLike: (postId, userId) => {
+    return modelo.toggleLike(postId, userId);
+  },
+
   changeTmp: (hash) => {
     const sectionMain = document.getElementById('container');
     sectionMain.innerHTML = '';

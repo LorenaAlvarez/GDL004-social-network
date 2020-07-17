@@ -1,5 +1,5 @@
 export const modelo = {
-  posts: [],
+
   addPosts: (newPost) => {
     db.collection('posts').add(newPost)
   },
@@ -36,7 +36,15 @@ export const modelo = {
     return db.collection('posts').doc(id).update({
       text: text,
     });
-  } 
+  },
+  
+  // likes
+  toggleLike: (postId, userId) => {
+    return db.collection('posts-likes').add({
+      postId: postId,
+      userId: userId
+    })
+  }
 }
 
 

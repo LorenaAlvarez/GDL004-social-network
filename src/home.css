@@ -103,3 +103,26 @@
 .post-author {
     text-transform: capitalize;
 }
+
+.btn-cancel-post {
+    display: inline;
+}
+
+.btn-save-post {
+    display: inline;
+}
+
+.text-area {
+    width: 100%;
+}
+
+.fa-heart {
+    color: rgb(146, 146, 146);
+    cursor: pointer;
+    font-size: 15px;
+}
+     
+.like-icon-liked {
+    color:red;
+    cursor: pointer;
+}
